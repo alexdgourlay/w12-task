@@ -1,0 +1,9 @@
+.logo-container {
+  position: fixed;
+  height: auto;
+  z-index: 10;
+}
+
+.logo {
+  height: 150px;
+}

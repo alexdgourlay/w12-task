@@ -1,0 +1,67 @@
+.hero-card {
+  overflow: hidden;
+  display: block;
+  border: 2px solid black;
+
+  position: relative;
+  display: block;
+
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 700px;
+  width: 1800px;
+}
+
+.hero-card:after {
+  display: block;
+  position: relative;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.5) 100%);
+  margin-top: -700px;
+  height: 100%;
+  width: 100%;
+  content: "";
+}
+
+.hero-card:hover {
+  border-color: white;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-rail-title {
+  font-size: 28px;
+  color: white;
+  font-weight: 500;
+  margin-left: 70px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.card-rail {
+  margin-left: 70px;
+  display: inline-flex;
+  justify-content: flex-start;
+}
+
+.card-rail img {
+  background-image: linear-gradient(black, rgba(0, 0, 0, 0));
+}
+
+.regular-card {
+  overflow: hidden;
+  display: block;
+  border: 2px solid black;
+
+  margin-right: 20px;
+  width: 580px;
+  height: 320px;
+}
+.regular-card:hover {
+  border: 2px solid white;
+}
