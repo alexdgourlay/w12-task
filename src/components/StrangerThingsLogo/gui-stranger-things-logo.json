@@ -1,10 +1,1 @@
-{
-    "remembered": {
-        "Default": {
-            "0": {
-                "logoAnimationDuration": 6800,
-                "minimumOpacity": 0.55
-            }
-        }
-    }
-}
+{"remembered":{"Default":{"0":{"animationDuration":11400,"minOpacity":0.2,"scaleFactor":8.8,"expansionFactor":20}},"undefined":{"0":{"animationDuration":11400,"minOpacity":0,"scaleFactor":2.6,"expansionFactor":26}},"Preset 1":{"0":{"animationDuration":5000,"minOpacity":0,"scaleFactor":1,"expansionFactor":26}},"Preset 2":{"0":{"animationDuration":6400,"minOpacity":0,"scaleFactor":4,"expansionFactor":26}}},"closed":false,"preset":"Preset 1","folders":{"Stranger Things Logo":{"preset":"Default","closed":false,"folders":{}}}}

@@ -1,9 +1,15 @@
 .logo-container {
   position: fixed;
   height: auto;
-  z-index: 10;
+  width: auto;
+  z-index: 1;
+}
+
+path {
+  stroke: rgb(233, 42, 45);
 }
 
 .logo {
   height: 150px;
+  position: absolute;
 }

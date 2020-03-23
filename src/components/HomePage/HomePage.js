@@ -1,5 +1,6 @@
 import React from "react";
 import "./HomePage.css";
+import Protection from "../Protection";
 
 import strangerThingsHero from "../../assets/images/stranger-things-hero.png";
 import blackSummer from "../../assets/images/black-summer-regular.png";
@@ -10,6 +11,7 @@ const HomePage = (props) => {
   return (
     <div className="home-page">
       <div className="hero-card" onClick={() => props.transition()}>
+        <Protection clearPercent={20}></Protection>
         <img className="hero-image" alt="listing" src={strangerThingsHero}></img>
       </div>
       <p className="card-rail-title">More like this</p>

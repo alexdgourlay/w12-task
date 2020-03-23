@@ -1,6 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const fs = require("fs");
+const path = require("path");
+
+const port = 4000;
 
 const app = express();
 app.use(bodyParser.json());
@@ -10,7 +13,11 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Methods", "PATCH");
   next();
 });
-const port = 4000;
+
+app.get("/logo.svg", (req, res) => {
+  res.setHeader("Content-Type", "image/svg+xml");
+  res.sendFile(path.join(__dirname, "../src/assets/svg/stranger-things-logo.svg"));
+});
 
 const guiSettingsPaths = {
   app: "./src/gui-app.json",
@@ -18,7 +25,6 @@ const guiSettingsPaths = {
 };
 
 app.get("/gui-settings/:component", (req, res) => {
-  console.log(guiSettingsPaths[req.params.component]);
   fs.readFile(guiSettingsPaths[req.params.component], (err, data) => res.send(data));
 });
 

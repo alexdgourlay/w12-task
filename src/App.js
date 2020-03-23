@@ -9,6 +9,8 @@ import HomePage from "./components/HomePage/HomePage";
 import ProgramInfoPage from "./components/ProgramInfoPage/ProgramInfoPage";
 
 export default class App extends React.Component {
+  timeline;
+
   constructor(props) {
     super(props);
 
@@ -16,17 +18,22 @@ export default class App extends React.Component {
       showHome: true
     };
 
-    this.transitionScreens = this.transitionScreens.bind(this);
+    this.logo = React.createRef();
+    this.showHome = this.showHome.bind(this);
+    this.showProgramInfo = this.showProgramInfo.bind(this);
   }
 
-  componentDidMount() {
-    initGui(this);
-  }
-
-  transitionScreens() {
+  showHome(boolean) {
     this.setState({
-      showHome: !this.state.showHome
+      showHome: true
     });
+  }
+
+  showProgramInfo() {
+    this.setState({
+      showHome: false
+    });
+    this.logo.current.play();
   }
 
   render() {
@@ -34,18 +41,18 @@ export default class App extends React.Component {
 
     return (
       <div className="app">
-        <StrangerThingsLogo></StrangerThingsLogo>
+        <StrangerThingsLogo ref={this.logo}></StrangerThingsLogo>
+        {showHome && <HomePage transition={this.showProgramInfo}></HomePage>}
 
-        <CSSTransition in={showHome} appear={true} timeout={2000} classNames="fade">
-          {showHome === true ? (
-            <>
-              <HomePage className="page" transition={this.transitionScreens}></HomePage>
-            </>
-          ) : (
-            <>
-              <ProgramInfoPage transition={this.transitionScreens} className="page"></ProgramInfoPage>
-            </>
-          )}
+        <CSSTransition
+          in={!showHome}
+          timeout={showHome ? 500 : 2000}
+          appear={true}
+          classNames="fade"
+          mountOnEnter
+          unmountOnExit
+        >
+          <ProgramInfoPage transition={this.showHome} className="page"></ProgramInfoPage>
         </CSSTransition>
       </div>
     );

@@ -1,13 +1,26 @@
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 2000ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 1;
+  transition: opacity 500ms linear;
+}
+
 .app {
   width: 1920px;
   height: 1080px;
-
   position: fixed;
   top: 0;
   left: 0;
-
   overflow: hidden;
-
   background-color: black;
 }
 
@@ -18,14 +31,4 @@
   position: fixed;
   top: 0;
   left: 0;
-}
-
-/* Appear on page load */
-.fade-appear {
-  opacity: 0;
-}
-
-.fade-appear.fade-appear-active {
-  opacity: 1;
-  transition: opacity 2000ms linear;
 }

@@ -1,18 +1,18 @@
+/* Appear on page load */
+.loading {
+  opacity: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.program-info-page {
+  opacity: 1;
+  transition: opacity 5000ms ease-out;
+}
+
 .program-info-page img {
   object-fit: cover;
   width: 100%;
   height: 100%;
-}
-
-.program-info-page::after {
-  display: block;
-  position: relative;
-  background-image: blue;
-  /* background-image: rgba(0, 0, 0, 0.5); */
-  margin-top: -300px;
-  height: 100%;
-  width: 100%;
-  content: "";
 }
 
 .go-back {
@@ -27,6 +27,8 @@
   border-radius: 40px;
   cursor: pointer;
 
+  z-index: 10;
+
   position: absolute;
   top: 900px;
   left: 1700px;
@@ -37,6 +39,8 @@
   top: 400px;
   left: 100px;
   width: 800px;
+
+  z-index: 10;
 }
 
 .program-summary-container p {
@@ -55,6 +59,8 @@
   text-align: center;
   border-radius: 28px;
   cursor: pointer;
+
+  z-index: 10;
 
   position: absolute;
   top: 550px;
